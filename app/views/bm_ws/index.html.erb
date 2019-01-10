@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bmws</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X6</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bmws.each do |bmw| %>
+      <tr>
+        <td><%= bmw.X6 %></td>
+        <td><%= bmw.make %></td>
+        <td><%= bmw.model %></td>
+        <td><%= bmw.year %></td>
+        <td><%= link_to 'Show', bmw %></td>
+        <td><%= link_to 'Edit', edit_bmw_path(bmw) %></td>
+        <td><%= link_to 'Destroy', bmw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bmw', new_bmw_path %>
